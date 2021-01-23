@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --clr-dark-gray: hsl(217, 19%, 35%);
+    --clr-dark: hsl(214, 17%, 51%);
+    --clr-gray: hsl(212, 23%, 69%);
+    --clr-ligth: hsl(210, 46%, 95%);
+
+    --fw-regular: 500;
+    --fw-bold: 900;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Manrope',Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--clr-ligth);
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    max-width: 740px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.image{
+    height: 100%;
+    width: 330px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.text-container{
+    padding: 30px;
+}
+
+.heading{
+    color: var(--clr-dark-gray);
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.description{
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--clr-dark);
+    line-height: 1.5;
+}
+
+.post-description{
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.avatar{
+    height: 40px;
+    border-radius: 50%;
+}
+
+p.username, p.date{
+    margin: 0px;
+}
+
+.user-description{
+    margin-left: 20px;
+}
+
+.username{
+    color: var(--clr-dark-gray);
+    font-weight: 700;
+}
+
+.date{
+    color: var(--clr-dark);
+    font-weight: 500;
+    padding-top: 5px;
+}
+
+.share{
+    height: 30px;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    border-radius: 50%;
+    padding: 10px;
+    color: var(--clr-dark-gray);
+    background-color: var(--clr-ligth);
+    cursor: pointer;
+}
+
+.tooltipShare{
+    visibility: hidden;
+    width: 230px;
+    height: 50px;
+    padding: 15px;
+    color: #fff;
+    background-color: hsl(217, 19%, 35%);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0.5px 1px 5px #888;
+    position: absolute;
+    right: -80px;
+    bottom: 50px;
+    z-index: 1;
+}
+
+.tooltipIcon{
+    padding-left: 10px;
+}
+
+.sm-icons{
+    position: absolute;
+    right: 30px;
+    top: 30%;
+    cursor: pointer;
+}
+
+.sharetext{
+    color: hsl(210, 46%, 95%);
+    font-weight: 200;
+    position: absolute;
+    top: 37%;
+    left: 35px;
+    letter-spacing: 2px;
+}
+
+.tooltipShare::after{
+    content:"";
+    position: absolute;
+    right: 45%;
+    bottom: -14px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+}
+
+.tooltipShare.active {
+    visibility: visible;
+}
+
+.insideShare{
+    visibility: hidden;
+    height: 30px;
+    position: absolute;
+    right: 11%;
+    top: 30%;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: hsl(210, 46%, 95%);
+    cursor: pointer;
+
+}
+
+@media(max-width: 943px){
+    .container{
+        flex-direction: column;
+        width: 300px;
+    }
+
+    .text-container{
+        width: 100%;
+        padding: 0px;
+    }
+
+    .maintext{
+        padding: 30px 30px 0px 30px;
+    }
+
+    .image{
+        height: 200px;
+        width: 300px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .post-description{
+        padding: 0px 30px 15px 30px;
+        margin-top: 25px;
+    }
+
+    .date{
+        padding-top: 3px;
+    }
+
+    .share{
+        height: 25px;
+        right: 11%;
+        top: 17%;
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    .tooltipShare{
+        width: 300px;
+        height: 70px;
+        border-radius: 0px 0px 10px 10px;
+        bottom: 3px;
+        right: 0px;
+        margin-bottom: 0px;
+    }
+
+    .insideShare{
+        visibility: visible;
+    }
+
+    .sm-icons{
+        right: 34%;
+        top: 24%;
+    }
+
+    .tooltipShare::after{ 
+        display: none;
+    }
+    
+    .tooltipIcon{
+        padding-left: 10px;
+        margin-top: 7px;
+    }
+
+    .sharetext {
+        top: 40%;
+    }
+}
